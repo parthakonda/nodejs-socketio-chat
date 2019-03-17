@@ -2753,7 +2753,10 @@
           if (this.check()) {
             var t = this.uri(),
               e = this.protocols,
-              n = { agent: this.agent, perMessageDeflate: this.perMessageDeflate };
+              n = {
+                agent: this.agent,
+                perMessageDeflate: this.perMessageDeflate,
+              };
             (n.pfx = this.pfx),
               (n.key = this.key),
               (n.passphrase = this.passphrase),
