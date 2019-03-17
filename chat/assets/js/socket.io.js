@@ -17,7 +17,7 @@
       if (n[r]) return n[r].exports;
       var o = (n[r] = { exports: {}, id: r, loaded: !1 });
       return t[r].call(o.exports, o, o.exports, e), (o.loaded = !0), o.exports;
-    }
+    },
     var n = {};
     return (e.m = t), (e.c = n), (e.p = ''), e(0);
   })([
@@ -910,7 +910,7 @@
           'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
             ? function(t) {
                 return typeof t;
-              }
+              },
             : function(t) {
                 return t &&
                   'function' == typeof Symbol &&
@@ -1153,7 +1153,7 @@
         return this instanceof r
           ? ((e = e || {}),
             t && 'object' == typeof t && ((e = t), (t = null)),
-            t
+            t,
               ? ((t = u(t)),
                 (e.hostname = t.host),
                 (e.secure = 'https' === t.protocol || 'wss' === t.protocol),
@@ -1741,7 +1741,7 @@
                 for (var r in this.extraHeaders)
                   this.extraHeaders.hasOwnProperty(r) &&
                     e.setRequestHeader(r, this.extraHeaders[r]);
-              }
+              },
             } catch (o) {}
             if ('POST' === this.method)
               try {
@@ -3021,7 +3021,7 @@
               var r = a(arguments);
               u('sending ack %j', r),
                 e.packet({ type: f(r) ? i.BINARY_ACK : i.ACK, id: t, data: r });
-            }
+            },
           };
         }),
         (r.prototype.onack = function(t) {

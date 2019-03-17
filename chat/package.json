@@ -42,8 +42,7 @@
 	},
 	"lint-staged": {
 		"*.js": [
-			"prettier */*/*.js */*.js --write",
-			"./node_modules/eslint/bin/eslint.js src/ tests/ bin/ --fix --ignore-pattern '!.eslintrc.js'",
+			"prettier src/*.js --write",
 			"git add"
 		]
 	},
