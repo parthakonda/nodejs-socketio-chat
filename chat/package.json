@@ -5,7 +5,7 @@
 	"main": "src/server.js",
 	"scripts": {
 		"start": "nodemon src/server.js",
-		"pretty": "prettier */*/*.js */*.js --write",
+		"pretty": "prettier src/*.js --write",
 		"lint": "eslint src/ --fix",
 		"docs": "rm -rf out && jsdoc src/*.js && http-server out/",
 		"clean": "rm -rf out"
@@ -41,10 +41,7 @@
 		}
 	},
 	"lint-staged": {
-		"*.js": [
-			"prettier src/*.js --write",
-			"git add"
-		]
+		"*.js": [ "prettier src/*.js --write", "git add" ]
 	},
 	"engines": {
 		"node": "10.14.2"
