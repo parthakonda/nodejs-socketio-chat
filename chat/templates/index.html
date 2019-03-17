@@ -1,0 +1,25 @@
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/socket.io.js"></script>
+<script>
+  var socket = io({
+    query: {
+      'email': 'parthasaradhi1992@gmail.com'
+    }
+  });
+
+  socket.on('message', (data) => {
+    alert(data);
+  })
+</script>
+</head>
+<body>
+    <h1>Welcome {{ title }} </h1>
+</body>
+</html>

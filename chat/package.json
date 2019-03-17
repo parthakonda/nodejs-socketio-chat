@@ -1,0 +1,53 @@
+{
+	"name": "chat",
+	"version": "1.0.0",
+	"description": "A chat application using nodejs and socket.io",
+	"main": "src/server.js",
+	"scripts": {
+		"start": "nodemon src/server.js",
+		"pretty": "prettier */*/*.js */*.js --write",
+		"lint": "eslint src/ --fix",
+		"docs": "rm -rf out && jsdoc src/*.js && http-server out/",
+		"clean": "rm -rf out"
+	},
+	"author": "ParthaSaradhiKonda<parthasaradhi1992@gmail.com>",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.18.3",
+		"express": "^4.16.4",
+		"mustache-express": "^1.2.8",
+		"pm2": "^3.4.0",
+		"socket.io": "^2.2.0"
+	},
+	"devDependencies": {
+		"eslint": "^5.10.0",
+		"eslint-config-standard": "^12.0.0",
+		"eslint-plugin-import": "^2.14.0",
+		"eslint-plugin-jest": "^22.1.2",
+		"eslint-plugin-node": "^8.0.0",
+		"eslint-plugin-promise": "^4.0.1",
+		"eslint-plugin-standard": "^4.0.0",
+		"http-server": "^0.11.1",
+		"husky": "^1.2.1",
+		"jest": "^24.5.0",
+		"jsdoc": "^3.5.5",
+		"lint-staged": "^8.1.0",
+		"nodemon": "^1.18.9",
+		"prettier": "^1.15.3"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.js": [
+			"prettier */*/*.js */*.js --write",
+			"./node_modules/eslint/bin/eslint.js src/ tests/ bin/ --fix --ignore-pattern '!.eslintrc.js'",
+			"git add"
+		]
+	},
+	"engines": {
+		"node": "10.14.2"
+	}
+}
